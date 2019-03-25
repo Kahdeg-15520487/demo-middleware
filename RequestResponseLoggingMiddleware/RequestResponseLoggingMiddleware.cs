@@ -145,6 +145,10 @@ namespace RequestResponseLoggingMiddleware
 
     public static class RequestResponseLoggingMiddlewareExtensions
     {
+        /// <summary>
+        /// Configure the log file path
+        /// </summary>
+        /// <param name="logfile">the log file path</param>
         public static IServiceCollection AddFileRequestResponseLogging(this IServiceCollection services, string logfile = null)
         {
             RequestResponseLoggingMiddleware.LogFile = logfile;
