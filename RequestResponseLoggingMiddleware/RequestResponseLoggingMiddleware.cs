@@ -30,6 +30,9 @@ namespace RequestResponseLoggingMiddleware
                       .CreateLogger<RequestResponseLoggingMiddleware>();
         }
 
+        /// <summary>
+        /// the method that is in charge of the function of this middleware
+        /// </summary>
         public async Task Invoke(HttpContext context)
         {
             string response;
@@ -61,6 +64,8 @@ namespace RequestResponseLoggingMiddleware
                 await this.WriteDownLog(request, response);
             }
         }
+
+        #region Helper method
 
         /// <summary>
         /// Serve the log file
@@ -134,6 +139,8 @@ namespace RequestResponseLoggingMiddleware
 
             return $"Response {text}";
         }
+
+        #endregion
     }
 
     public static class RequestResponseLoggingMiddlewareExtensions
